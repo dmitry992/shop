@@ -1,5 +1,6 @@
 on:
-  pull_request:
+  branches:
+      - test
 name: Deploy website on push
 jobs:
   web-deploy:

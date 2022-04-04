@@ -231,7 +231,7 @@ $_SESSION['lng'] = 'ru';
 				<a class="link__cart-btn button" href="cart.php">
 
 					<p>
-						Корзина
+						Список заказов
 						<?php if ($_SESSION['total_cart']) : ?>
 							<span id="total_price" style="display:inline-block">
 								<?php
