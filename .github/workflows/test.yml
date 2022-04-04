@@ -1,6 +1,7 @@
 on:
-  branches:
-    - test
+  push:
+    branches:
+      - test
 name: Deploy website on push
 jobs:
   web-deploy:
