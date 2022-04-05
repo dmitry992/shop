@@ -136,8 +136,10 @@ check_user_fn();
 
 
 
-
-
+let get_message = function(){
+    console.log('hello');
+}
+get_message();
 
 
 // Check before opening the user menu for user authorization
