@@ -134,6 +134,7 @@ check_user_fn();
 //
 //
 
+let example = 2;
 
 
 let get_message = function(){
