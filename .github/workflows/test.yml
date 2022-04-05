@@ -4,17 +4,19 @@ on:
       - test
 name: Deploy website on push
 jobs:
-  web-deploy:
-    name: Deploy
-    runs-on: ubuntu-latest
-    steps:
-    - name: Get lasted code
-      uses: actions/checkout@v3
+  if_merged:
+    if: github.event.pull_request.merged == true
+    web-deploy:
+      name: Deploy
+      runs-on: ubuntu-latest
+      steps:
+      - name: Get lasted code
+        uses: actions/checkout@v3
 
-    - name: Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.3.0
-      with: 
-        server: novalsystems.com
-        username: ${{ secrets.ftp_username_test}}
-        password: ${{ secrets.ftp_password_test}}
-        server-dir: /public_html/sweet_shop/
+      - name: Sync files
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with: 
+          server: novalsystems.com
+          username: ${{ secrets.ftp_username_test}}
+          password: ${{ secrets.ftp_password_test}}
+          server-dir: /public_html/sweet_shop/
