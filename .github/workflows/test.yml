@@ -1,6 +1,6 @@
 on:
   pull_request:
-    branches:    
+    branches:
       - test
 name: Deploy website on push
 jobs:
@@ -8,13 +8,13 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
-    - name: Get lasted code
-      uses: actions/checkout@v3
+      - name: Get lasted code
+        uses: actions/checkout@v3
 
-    - name: Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.3.0
-      with: 
-        server: novalsystems.com
-        username: ${{ secrets.ftp_username_test}}
-        password: ${{ secrets.ftp_password_test}}
-        server-dir: /public_html/sweet_shop/
+      - name: Sync files
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: novalsystems.com
+          username: ${{ secrets.ftp_username_test}}
+          password: ${{ secrets.ftp_password_test}}
+          server-dir: /public_html/sweet_shop/
