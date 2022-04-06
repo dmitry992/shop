@@ -134,13 +134,9 @@ check_user_fn();
 //
 //
 
-let example = 0;
 
 
-let get_message = function(){
-    console.log('hello');
-}
-get_message();
+
 
 
 
